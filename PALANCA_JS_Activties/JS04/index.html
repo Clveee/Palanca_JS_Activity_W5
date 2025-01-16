@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date Subtraction</title>
+</head>
+<body>
+  <div>
+    <h1>Date Subtraction</h1>
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date" name="start-date"><br><br>
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date" name="end-date"><br><br>
+    <button onclick="calculateDifference()">Calculate Difference</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+  function calculateDifference() {
+    const startDate = new Date(document.getElementById("start-date").value);
+    const endDate = new Date(document.getElementById("end-date").value);
+
+    const timeDifference = endDate.getTime() - startDate.getTime();
+    const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+    document.getElementById("result").innerHTML = "The difference is " + daysDifference + " days.";
+  }
+  </script>
+</body>
+</html>
